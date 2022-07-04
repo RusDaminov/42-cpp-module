@@ -1,10 +1,10 @@
-SRCS	=	PhoneBook.cpp Contact.cpp main.cpp
+SRCS	=	Account.cpp tests.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
-NAME = PhoneBook
+NAME = Account
 
-HEADER = PhoneBook.hpp Contact.hpp
+HEADER = Account.hpp
 
 CXX = clang++
 
