@@ -6,10 +6,9 @@ int main()
 	my->announce();
 	delete my; // удаление Uasya
 
-	randomChump("Valera"); // на стеке выделяется зомби
+	randomChump("Biba"); // на стеке выделяется зомби
 
-	Zombie two("Denis");//на стеке тоже самое что делает randomChump
-//	two.set_name("as");
+	Zombie two("Boba");//на стеке тоже самое что делает randomChump
 	two.announce();
 	return (0);
 }

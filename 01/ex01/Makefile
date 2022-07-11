@@ -2,7 +2,7 @@ SRCS	=	Zombie.cpp main.cpp ZombieHorde.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
-NAME = Zombie
+NAME = MoarBrainz
 
 HEADER = Zombie.hpp
 

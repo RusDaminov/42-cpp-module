@@ -1,6 +1,5 @@
 #include <iostream>
 #include <iomanip>
-#include <ctime>
 #include "Account.hpp"
 
 int	Account::_nbAccounts = 0;        //присваиваем статическим переменным начальное значение
@@ -17,7 +16,7 @@ Account::Account(int initial_deposit)
 	_totalAmount += _amount;
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";amount:" << _amount <<
-			  ";created" << std::endl; //выводится первые 8 строк
+			  ";created" << std::endl; //выводятся первые 8 строк
 	_nbAccounts++;
 }
 
@@ -29,8 +28,8 @@ Account::~Account()
 
 void	Account::_displayTimestamp(void)
 {
-	std::time_t sec = std::time(NULL); //сколько секунд прошло с
-	std::tm tm = *std::localtime(&sec); // преобразование в норм формат
+	std::time_t sec = std::time(NULL);
+	std::tm tm = *std::localtime(&sec);
 	std::cout << "[" << std::setfill('0')
 			  << std::setw(4) << tm.tm_year + 1900
 			  << std::setw(2) << tm.tm_mon + 1

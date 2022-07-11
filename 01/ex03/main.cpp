@@ -1,24 +1,23 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
+#include "Weapon.hpp"
 
 int main()
 {
 	{
 		Weapon club = Weapon("crude spiked club");
-		HumanA valera("Valera", club);
-		valera.attack();
+		HumanA bob("Bob", club);
+		bob.attack();
 		club.setType("some other type of club");
-		valera.attack();
+		bob.attack();
 	}
 	{
 		Weapon club = Weapon("crude spiked club");
-		HumanB aydar("Aydar");
-		aydar.attack(); // посмотреть, что Aydar без оружия выводит тогда как Valera всегда имеет
-		aydar.setWeapon(club);
-		aydar.attack();
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
 		club.setType("some other type of club");
-		aydar.attack();
+		jim.attack();
 	}
-	return (0);
+	return 0;
 }
-
