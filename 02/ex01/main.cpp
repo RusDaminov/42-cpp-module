@@ -1,6 +1,7 @@
 //
 // Created by Ruslan Daminov on 12.07.2022.
 //
+
 #include "Fixed.hpp"
 
 int main(void)

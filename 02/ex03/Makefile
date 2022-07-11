@@ -1,10 +1,10 @@
-SRCS	=	main.cpp Fixed.cpp
+SRCS	=	main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
-NAME =	Fixed
+NAME =	Point_triangle
 
-HEADER = Fixed.hpp
+HEADER = Fixed.hpp Point.cpp
 
 CXX = clang++
 

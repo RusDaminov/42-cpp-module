@@ -1,4 +1,4 @@
-SRCS	=	main.cpp Fixed.cpp
+SRCS	=	main_sub.cpp Fixed.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
