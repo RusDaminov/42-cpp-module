@@ -30,10 +30,11 @@ public:
 	int 		getEnergy() const;
 	int 		getDamage() const;
 
-	virtual void	attack(std::string const & target);
-	void			takeDamage(unsigned int amount);
-	void			beRepaired(unsigned int amount);
+	void	attack(std::string const & target);
+	void	takeDamage(unsigned int amount);
+	void	beRepaired(unsigned int amount);
 
 };
+
 
 #endif //CPP_CLAPTRAP_HPP

@@ -49,10 +49,12 @@ int 		ClapTrap::getPoints() const
 {
 	return (this->_hitpoints);
 }
+
 int 		ClapTrap::getEnergy() const
 {
 	return (this->_energy_points);
 }
+
 int 		ClapTrap::getDamage() const
 {
 	return (this->_damage);
