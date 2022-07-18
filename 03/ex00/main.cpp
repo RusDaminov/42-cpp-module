@@ -2,11 +2,11 @@
 
 int main()
 {
-	ClapTrap one("Zhenya");
+	ClapTrap one("Abobus");
 	ClapTrap two;
 	ClapTrap three(one);
 
-	one.attack("yuuuhhhh");
+	one.attack("Bibobus");
 	one.takeDamage(3);
 	one.beRepaired(1);
 	return (0);

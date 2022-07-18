@@ -1,10 +1,10 @@
-SRCS	=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
+SRCS	=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
-NAME = DiamondTrap
+NAME = FragTrap
 
-HEADER = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
+HEADER = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 
 CXX = clang++
 
