@@ -1,0 +1,23 @@
+//
+// Created by Arshavin Bernita on 7/19/22.
+//
+
+#ifndef CPP_CAT_HPP
+#define CPP_CAT_HPP
+
+#include "Animal.hpp"
+
+class Cat : public Animal
+{
+public:
+	Cat();
+	~Cat();
+	Cat(const Cat & copy);
+
+	Cat & operator= (const Cat & other);
+
+	void makeSound() const;
+};
+
+
+#endif //CPP_CAT_HPP
