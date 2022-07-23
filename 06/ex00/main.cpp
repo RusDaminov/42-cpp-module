@@ -1,3 +1,7 @@
+//
+// Created by Arshavin Bernita on 7/23/22.
+//
+
 #include <iostream>
 #include "Convert.hpp"
 
@@ -5,7 +9,7 @@ int main(int argc, char **argv)
 {
     if (argc != 2)
     {
-        std::cout << "Error count parametrs" << std::endl;
+        std::cout << "Error count parameters" << std::endl;
         return (1);
     }
 
