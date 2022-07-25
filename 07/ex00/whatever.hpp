@@ -2,30 +2,30 @@
 // Created by Arshavin Bernita on 7/23/22.
 //
 
-#ifndef CPP_PISCINE_WHATEVER_HPP
-#define CPP_PISCINE_WHATEVER_HPP
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
 
 #include <iostream>
+#include <string>
 
 template <typename T>
-void swap(T& a, T& b)
+void	swap(T &x, T &y)
 {
-    T c;
-    c = a;
-    a = b;
-    b = c;
+	T tmp;
+	tmp = x;
+	x = y;
+	y = tmp;
 }
 
 template <typename T>
-T min(T a, T b)
+T	&min(T &x, T &y)
 {
-    return (a < b ? a : b);
+	return ((x < y) ? x : y);
 }
 
 template <typename T>
-T max(T a, T b)
+T	&max(T &x, T &y)
 {
-    return (a > b ? a : b);
+	return ((x > y) ? x : y);
 }
-
-#endif //CPP_PISCINE_WHATEVER_HPP
+#endif

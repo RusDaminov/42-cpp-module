@@ -2,34 +2,23 @@
 // Created by Arshavin Bernita on 7/23/22.
 //
 
-#ifndef CPP_PISCINE_ITER_HPP
-#define CPP_PISCINE_ITER_HPP
+#ifndef ITER_HPP
+#define ITER_HPP
 
 #include <iostream>
 #include <string>
 
-//template <typename point, typename func>
-//void iter(point *arr, size_t size, func f)
-//{
-//    size_t i = 0;
-//
-//    while (i < size)
-//    {
-//        f(arr[i]);
-//        i++;
-//    }
-//};
+template <typename T>
+void	iter(T *arr, int size, void (*f)(T const &val))
+{
+	for (int i = 0; i < size; i++)
+		(*f)(arr[i]);
+}
 
 template <typename T>
-void iter(T *arr, size_t size, void(*f)(T const &))
+void print(T const &val)
 {
-    size_t i = 0;
+	std::cout << val << std::endl;
+}
 
-    while (i < size)
-    {
-        f(arr[i]);
-        i++;
-    }
-};
-
-#endif //CPP_PISCINE_ITER_HPP
+#endif

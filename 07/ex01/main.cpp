@@ -4,49 +4,25 @@
 
 #include "iter.hpp"
 
-template <typename T>
-void plus(T &arr)
+int main( void )
 {
-    arr++;
-    std::cout << arr << " ";
-}
+	int arr[4] = {7, 77, 10, 777};
+	iter(arr, 4, &print);  std::cout << "--------Float--------" << std::endl;
 
-void hight(char &s)
-{
-    std::cout << static_cast<char>(toupper(s));
-}
+	float floatR[5] = { 0.0f, 1.1f, 2.2f, 3.3f, 4.4f };
+	iter(floatR, 5, &print); std::cout << "--------double--------" << std::endl;
 
-void wr(std::string &str)
-{
-    str = "vjuh";
-}
+	double doubleR[5] = { 0.00, 1.11, 2.22, 3.33, 4.44 };
+	iter(doubleR, 5, &print); std::cout << "--------bool--------" << std::endl;
 
-//void wr2(char &str)
-//{
-//    str = 'Z';
-//}
+	bool boolR[2] = { false, true };
+	iter(boolR, 2, &print);
 
-int main()
-{
-    int arr[10] = {0 , 1 , 2, 3, 4, 5, 6, 7, 8, 9};
-    double d[5] = {2.0, 5.55, 10.10, 0.951236, 3};
-    char s[6] = "hello";
-    std::string str[5]{};
-//    char *s2 = NULL;
-//    s2 = (char *)calloc(10, 1);
+	std::cout << "--------string--------" << std::endl;
 
-    ::iter(arr, 10, plus<int>);
-    std::cout << std::endl;
-    ::iter(d, 5, plus<double>);
-    std::cout << std::endl;
-    ::iter(s, 6, hight);
-    std::cout << std::endl;
-    ::iter(str, 5, wr);
-    for (int i = 0; i < 5; i++)
-        std::cout << str[i]<< std::endl;
-//    ::iter(s2, 3, wr2);
-//    for (int i = 0; i < 5; i++)
-//        std::cout << s2[i]<< std::endl;
-
-    return (0);
+	std::string stringR[5] = { "phrase 1", "phrase 2", "templates", "are", "fun" };
+	iter(stringR, 5, &print); std::cout << "--------|string but with size == 2|--------" << std::endl;
+	iter(stringR, 2, &print); std::cout << "--------|string but with size == 0|--------" << std::endl;
+	iter(stringR, 0, &print);
+	return 0;
 }

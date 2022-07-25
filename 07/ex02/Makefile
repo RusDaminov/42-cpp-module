@@ -2,7 +2,7 @@ SRCS	=	main.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
-NAME =		template
+NAME =		array
 
 HEADER =	Array.hpp
 

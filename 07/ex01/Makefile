@@ -1,8 +1,8 @@
-SRCS	=	main_sub.cpp
+SRCS	=	main.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
-NAME =		template
+NAME =		iter
 
 HEADER =	iter.hpp
 
