@@ -3,43 +3,49 @@
 //
 
 #include <iostream>
+#include <string>
 
-typedef struct
+struct Data
 {
-    int x;
-    float y;
-    char z;
-} Data;
+	int		i1;
+	int		i2;
+	char	c;
+	bool	b;
+};
 
-uintptr_t serealize(Data * ptr)
+uintptr_t serialize(Data* ptr)
 {
-    return (reinterpret_cast<uintptr_t>(ptr));
+	return (reinterpret_cast<uintptr_t>(ptr));
 }
 
-Data * deserealize(uintptr_t raw)
+Data* deserialize(uintptr_t raw)
 {
-    return (reinterpret_cast<Data *>(raw));
+	return (reinterpret_cast<Data *>(raw));
 }
 
-int main ()
+int main()
 {
-    Data * a = new Data();
-    Data * b;
-    uintptr_t raw;
+	Data data;
+	Data *ptr;
+	uintptr_t raw;
 
-    a->x = 0;
-    a->y = 3.23;
-    a->z = 'k';
-    raw = serealize(a);
+	data.i1 = 7;
+	data.i2 = 77;
+	data.c = 'M';
+	data.b = true;
 
-    std::cout << "adress data A:\t\t" << a << std::endl;
-    std::cout << "A: " << a->x << "\t" << a->y << "\t" << a->z << std::endl;
-    std::cout << "raw: " << raw << std::endl;
-    std::cout << "adress serialize A:\t" << &raw  << std::endl;
-    b = deserealize(raw);
-    std::cout << "adress deserialize raw:\t" << b  << std::endl;
-    std::cout << b->x  << "\t" << b->y << "\t" << b->z << std::endl;
+	std::cout << data.i1 << std::endl;
+	std::cout << data.i2 << std::endl;
+	std::cout << data.c << std::endl;
+	std::cout << data.b << std::endl;
+	std::cout << "-----------------------" << std::endl;
+	raw = serialize(&data);
+	ptr = deserialize(raw);
+	std::cout << ptr->i1 << std::endl;
+	std::cout << ptr->i2 << std::endl;
+	std::cout << ptr->c << std::endl;
+	std::cout << ptr->b << std::endl;
 
-    delete a;
-    return (0);
+
+	return (0);
 }

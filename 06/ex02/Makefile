@@ -1,32 +1,60 @@
-SRCS	=	main.cpp
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rnoriko <rnoriko@student.21-school.ru>     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/04/28 16:49:55 by rnoriko           #+#    #+#              #
+#    Updated: 2022/04/28 16:52:30 by rnoriko          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-OBJS	=	${SRCS:.cpp=.o}
+NAME = ./RealType
 
-NAME =		cast
+OBJECTSDIR = objects
+HEADERS_FOLDER = headers
 
-HEADER =
+FLAGS = -Wall -Wextra -Werror -std=c++98
+RED = \033[1;31m
+GREEN = \033[1;32m
+YELLOW = \033[1;33m
+BLUE = \033[1;34m
+RESET = \033[0m
 
-CXX = clang++
+SRC_FILES = main.cpp
 
-RM = rm -fr
+OBJS := $(SRC_FILES:.cpp=.o)
 
-CPPFLAGS = -Wall -Wextra -Werror
+CC = clang++
 
+RM = rm -rf
+RMDIR = rm -rf
+MKDIR = mkdir -p
+MAKE = make -C
+ECHO = /bin/echo
+ERRIGNORE = 2>/dev/null
 
-.PHONY: all clean fclean re
+all: $(NAME)
+	@echo "$(BLUE)██████████████████████ Compiling is DONE ███████████████████████$(RESET)"
 
-.cpp.o:
-			${CXX} ${CPPFLAGS} -c $< -o $@
+$(NAME):$(OBJS)
+	@$(CC) -I $(HEADERS_FOLDER) $(OBJS) -o $@
 
-all:		${NAME}
-
-${NAME}:	${OBJS} ${HEADER}
-			@${CXX} ${CPPFLAGC} -o ${NAME} ${OBJS}
+main.o: main.cpp
+	@$(MKDIR) $(dir $@)
+	@echo "$(BLUE)█ $(YELLOW)Compiling$(RESET) $<:\r\t\t\t\t\t\t\t$(GREEN){DONE}$(BLUE) █$(RESET)"
+	@$(CC) $(FLAGS) -I $(HEADERS_FOLDER) -o $@ -c $<
 
 clean:
-			@${RM} ${OBJS}
+	@echo "$(RED)deleting$(RESET): " objects
+	@$(RMDIR) $(OBJS)
 
-fclean:		clean
-			@${RM} ${NAME}
 
-re:			fclean all
+fclean: clean
+	@echo "$(RED)deleting$(RESET): " $(NAME)
+	@$(RM) $(NAME) $(ERRIGNORE)
+
+re: fclean all
+
+.PHONY:			all clean fclean re
