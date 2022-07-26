@@ -1,14 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rnoriko <rnoriko@student.21-school.ru>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/02 15:18:06 by rnoriko           #+#    #+#             */
-/*   Updated: 2022/05/02 15:18:08 by rnoriko          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+//
+// Created by Arshavin Bernita on 7/26/22.
+//
 
 #if !defined(EASYFIND_HPP)
 #define EASYFIND_HPP
@@ -33,4 +25,4 @@ typename T::iterator easyfind(T &container, int value)
 	return it;
 };
 
-#endif // EASYFIND_HPP
+#endif
